@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('partials/nav') %>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% if(user) { %>
+    <div class="profileInfo">
+      <img src="<%= user.picture %>" />
+      <p class="name">
+        <%= user.nickname.charAt(0).toUpperCase() + user.nickname.slice(1) %>
+      </p>
+    </div>
+    <% } %>
+    <pre><%= JSON.stringify(data, null, 2) %></pre>
+  </body>
+</html>

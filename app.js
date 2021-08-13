@@ -10,6 +10,12 @@ const config = {
   baseURL: process.env.BASEURL,
   clientID: process.env.CLIENTID,
   issuerBaseURL: process.env.ISSUER,
+  clientSecret: process.env.CLIENTSECRET,
+  authorizationParams: {
+    response_type: "code",
+    audience: "http://localhost:5000",
+    scope: "openid profile email",
+  },
 };
 
 var app = express();
